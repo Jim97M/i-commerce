@@ -53,7 +53,7 @@ const MenuItem = styled.div`
 
 `
 const Logo = styled
-const navbar = () => {
+const Navbar = () => {
     return (
         <Container>
              <Wrapper>
@@ -85,4 +85,4 @@ const navbar = () => {
     )
 }
 
-export default navbar
+export default Navbar
