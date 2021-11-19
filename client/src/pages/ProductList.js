@@ -5,10 +5,11 @@ import Announcement from '../Navbar/Announcement';
 import Products from '../Navbar/Products';
 import Newsletter from '../Navbar/Newsletter';
 import Footer from '../Navbar/Footer';
+import Product from './Product';
+import Cart from './Cart';
 
-const Container = styled.div`
 
-`;
+const Container = styled.div``;
 
 const Title = styled.h1`margin: 20px;`;
 
@@ -37,7 +38,7 @@ const Option = styled.option`
 const ProductList = () => {
     return (
         <Container>
-            <Navbar />
+             {/* <Navbar />
             <Announcement />
            
             <FilterContainer>
@@ -62,9 +63,10 @@ const ProductList = () => {
             </FilterContainer>
            <Products />
            <Newsletter />
-           <Footer />
+           <Footer />  */}
+           <Cart />
         </Container>
-    )
+    );
 }
 
 export default ProductList

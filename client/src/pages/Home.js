@@ -6,16 +6,18 @@ import Categories from '../Navbar/Categories'
 import Products from '../Navbar/Products'
 import Newsletter from '../Navbar/Newsletter'
 import Footer from '../Navbar/Footer'
+import Register from './Register'
 const Home = () => {
     return (
    <div>
-        <Announcement />
+        {/* <Announcement />
         <Navbar />
         <Slider />
         <Categories />
         <Products />
         <Newsletter />
-        <Footer />
+        <Footer /> */}
+        <Register />
     </div>
     )
 }
