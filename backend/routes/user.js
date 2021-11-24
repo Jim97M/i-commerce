@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { findByIdAndDelete } = require('../models/User');
 const User = require('../models/User');
-const { verifyToken, verifyTokenAndAuthorization } = require("./verifyToken");
+const { verifyToken, verifyTokenAndAuthorization, verifyTokenAndAdmin } = require("./verifyToken");
 
 
 //Update Method
@@ -32,9 +32,19 @@ router.delete('/:id', verifyTokenAndAuthorization, async (req, res) => {
     try {
         await User.findByIdAndDelete(req.params.id);
         next();
-        res.status(201).json("User Deleted");
+        res.status(200).json("User Deleted");
     } catch (err) {
-        res.status(400).json(err);
+        res.status(500).json(err);
+    }
+})
+
+router.get('/find/:id', verifyTokenAndAdmin, (res, req) => {
+    try {
+        const user = User.findById(req.params.id);
+        const { password, ...others } = user._doc;
+        res.status(200).json(others);
+    } catch (err) {
+        res.status()
     }
 })
 
