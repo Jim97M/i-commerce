@@ -63,7 +63,6 @@ const verifyTokenAndAuthorization = (req, res, next) => {
         }
     });
 };
-
 const verifyTokenAndAdmin = (req, res, next) => {
     verifyToken(req, res, () => {
         if (req.user.isAdmin) {
