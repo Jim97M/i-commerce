@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 const authRoute = require("./routes/auth")
 const userRoute = require("./routes/user")
+const productRoute = require("./routes/product")
 
 dotenv.config()
 
@@ -19,8 +20,8 @@ app.get("/api/v1/test", () => {
 
 app.use(express.json());
 app.use("/api/v1/user", userRoute);
-
 app.use("/api/v1/auth", authRoute);
+app.use("/api/v1/product", productRoute);
 
 app.listen(process.env.PORT || 5000, () => {
     console.log('Backend Started')
