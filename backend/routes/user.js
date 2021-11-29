@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const { findByIdAndDelete } = require('../models/User');
 const User = require('../models/User');
 const { verifyToken, verifyTokenAndAuthorization, verifyTokenAndAdmin } = require("./verifyToken");
 
