@@ -8,6 +8,7 @@ module.exports = {
     devServer: {
         port: 3010,
         liveReload: true,
+        historyApiFallback: true,
     },
     module:{
         rules: [
@@ -23,7 +24,7 @@ module.exports = {
              use:[
                  'style-loader',
                  'sass-loader',
-                 'css-loader'
+                 'css-loader',
              ]
             }
            

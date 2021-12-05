@@ -10,13 +10,13 @@ import Register from './Register'
 const Home = () => {
     return (
    <div>
-        {/* <Announcement />
+         <Announcement />
         <Navbar />
         <Slider />
         <Categories />
         <Products />
         <Newsletter />
-        <Footer /> */}
+        <Footer /> 
         <Register />
     </div>
     )
