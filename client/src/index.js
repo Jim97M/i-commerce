@@ -1,3 +1,5 @@
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 require('file-loader?name=[name].[ext]!./index.html')
 import React from "react";
 import ReactDOM  from "react-dom";

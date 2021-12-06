@@ -27,16 +27,19 @@ export const categories = [
         id:1,
         img: "https://res.cloudinary.com/dqpsoxe38/image/upload/v1636815730/nore/photo-1505740420928-5e560c06d30e_q4ru0j.jpg",
         title: "QUALITY HEADSETS",
+        cat: "electronics"
     },
     {
         id:2,
         img: "https://res.cloudinary.com/dqpsoxe38/image/upload/v1636815692/nore/product9_juofuw.jpg",
         title: "XBOX CONTROLLER",
+        cat: "fashion",
     },
     {
         id:3,
         img: "https://res.cloudinary.com/dqpsoxe38/image/upload/v1636815712/nore/product6_zncb1f.jpg",
         title: "QUALITY MOUSE",
+        cat: "automotive",
     }
 ]
 
