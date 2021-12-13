@@ -1,10 +1,10 @@
 import React from "react";
 import Home from "./pages/Home";
 import ProductList from "./pages/ProductList";
-import Product from "./Navbar/Product";
 import Cart from "./pages/Cart";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import Product from "./pages/Product";
 import { BrowserRouter, Routes, Route, Link, Navigate } from "react-router-dom";
 const App = () => {
   const user = true;

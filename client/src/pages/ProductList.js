@@ -54,7 +54,7 @@ const ProductList = () => {
       <Announcement />
       <FilterContainer>
         <Filter>
-          <Title>Laptops</Title>
+          <Title>{cat}</Title>
           <FilterText>Filter Products:</FilterText>
           <Select name="color" onChange={handleFilters}>
             <Option disabled>Color</Option>
@@ -92,3 +92,4 @@ const ProductList = () => {
 };
 
 export default ProductList;
+Object

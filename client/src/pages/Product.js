@@ -1,8 +1,10 @@
 import { Add, Remove } from "@material-ui/icons";
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router";
 import styled from "styled-components";
 import Footer from "../Navbar/Footer";
 import Newsletter from "../Navbar/Newsletter";
+import { publicRequest } from "../requestMethod";
 
 const Container = styled.div``;
 
@@ -112,34 +114,44 @@ const Button = styled.button`
 // const Add = styled.div``;
 
 const Product = () => {
+   const location = useLocation();
+   const id = location.pathname.split("/")[2];
+   const [products, setProducts] = useState({});
+  
+  useEffect(()=> {
+    const getProducts = async() => {
+     try{
+      const res = await publicRequest.get("/product/find/" + id);
+      setProducts(res.data);
+      console.log(res.data);
+     }catch{
+
+     }
+    }
+    getProducts();
+  }, [id])
+
+  
+
   return (
     <Container>
       <Announcement />
       <Wrapper>
         <ImgContainer>
-          <Image src="https://res.cloudinary.com/dqpsoxe38/image/upload/v1636815756/nore/product5_dydrl0.jpg" />
+          <Image src="{products.img}" />
         </ImgContainer>
         <InfoContainer>
-          <Title>HP Laptop</Title>
+          <Title>{products}</Title>
           <Description>
-            This product is for users refined with test to have quality products
-            to their displosal and can ultimately have more to check and
-            announce that the quality of their product and the product shop have
-            more test and offers quality service. This product is for users
-            refined with test to have quality products to their displosal and
-            can ultimately have more to check and announce that the quality of
-            their product and the product shop have more test and offers quality
-            service.
+            {products}
           </Description>
-          <Price> $20</Price>
+          <Price> {products}</Price>
           <FilterContainer>
-            <Filter>
+            {/* <Filter>
               <FilterTitle>Color</FilterTitle>
-              <FilterColor color="black" />
-              <FilterColor color="darkblue" />
-              <FilterColor color="gray" />
-              <FilterColor />
-            </Filter>
+              {products.map((c) => (
+              <FilterColor color={c} key={c}/> ))}
+            </Filter> */}
             <Filter>
               <FilterTitle>Size</FilterTitle>
               <FilterSize>

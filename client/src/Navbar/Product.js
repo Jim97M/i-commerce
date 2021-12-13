@@ -1,5 +1,6 @@
 import { ListItem } from '@material-ui/core';
 import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from '@material-ui/icons';
+import { Link } from 'react-router-dom';
 import React from 'react'
 import styled from "styled-components";
 import { popularProduct } from '../data';
@@ -68,6 +69,8 @@ const Circle = styled.div`
    position: absolute;
 `;
 
+
+
 const Product = ({item}) => {
     return (
        <Container>
@@ -76,8 +79,11 @@ const Product = ({item}) => {
           <Image src={item.img}/>
           <Info>  
            <Icon>
-               <SearchOutlined/>
-           </Icon>
+              <Link to={`/products/${item._id}`}>
+                 {console.log("Clicked")}
+                 <SearchOutlined/>
+               </Link>
+           </Icon> 
            <Icon>
                <ShoppingCartOutlined />
            </Icon>
