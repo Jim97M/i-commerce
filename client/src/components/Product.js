@@ -79,14 +79,13 @@ const Product = ({item}) => {
           <Image src={item.img}/>
           <Info>  
            <Icon>
-              <Link to={`/products/${item._id}`}>
-                 {console.log("Clicked")}
+              <Link to={`/product/${item._id}`}>
                  <SearchOutlined/>
-               </Link>
+               </Link> 
            </Icon> 
            <Icon>
                <ShoppingCartOutlined />
-           </Icon>
+           </Icon>z
            <Icon>
                <FavoriteBorderOutlined />
            </Icon>

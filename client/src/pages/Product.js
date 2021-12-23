@@ -2,8 +2,8 @@ import { Add, Remove } from "@material-ui/icons";
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router";
 import styled from "styled-components";
-import Footer from "../Navbar/Footer";
-import Newsletter from "../Navbar/Newsletter";
+import Footer from "../components/Footer";
+import Newsletter from "../components/Newsletter";
 import { publicRequest } from "../requestMethod";
 
 const Container = styled.div``;
@@ -116,19 +116,17 @@ const Button = styled.button`
 const Product = () => {
    const location = useLocation();
    const id = location.pathname.split("/")[2];
-   const [products, setProducts] = useState({});
+   const [product, setProduct] = useState({});
   
   useEffect(()=> {
-    const getProducts = async() => {
+    const getProduct = async() => {
      try{
-      const res = await publicRequest.get("/product/find/" + id);
-      setProducts(res.data);
+      const res = await publicRequest.get("/products/find/" + id);
+      setProduct(res.data);
       console.log(res.data);
-     }catch{
-
-     }
+     }catch{}
     }
-    getProducts();
+    getProduct();
   }, [id])
 
   
@@ -138,20 +136,15 @@ const Product = () => {
       <Announcement />
       <Wrapper>
         <ImgContainer>
-          <Image src="{products.img}" />
+          <Image src="{product.img}" />
         </ImgContainer>
         <InfoContainer>
-          <Title>{products}</Title>
+          <Title>{product}</Title>
           <Description>
-            {products}
+            {product}
           </Description>
-          <Price> {products}</Price>
+          <Price> {product}</Price>
           <FilterContainer>
-            {/* <Filter>
-              <FilterTitle>Color</FilterTitle>
-              {products.map((c) => (
-              <FilterColor color={c} key={c}/> ))}
-            </Filter> */}
             <Filter>
               <FilterTitle>Size</FilterTitle>
               <FilterSize>
