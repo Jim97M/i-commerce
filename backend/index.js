@@ -18,14 +18,10 @@ mongoose
     console.log(err);
   });
 
-app.get("/api/v1/test", () => {
-  console.log("First Endpoint");
-});
-app.use(require("cors")());
+app.use(cors());
 app.use(express.json());
-
 app.use("/api/v1/user", userRoute);
-app.use("/api/v1/auth", require("cors")(), authRoute);
+app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/products", require("cors")(), productRoute);
 app.use("/api/v1/cart", cartRoute);
 app.use("/api/v1/order", orderRoute);

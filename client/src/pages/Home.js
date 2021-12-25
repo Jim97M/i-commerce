@@ -1,12 +1,12 @@
 import React from 'react'
-import Navbar from '../Navbar/Navbar'
-import Announcement from '../Navbar/Announcement'
-import Slider from '../Navbar/Slider'
-import Categories from '../Navbar/Categories'
-import Products from '../Navbar/Products'
-import Newsletter from '../Navbar/Newsletter'
-import Footer from '../Navbar/Footer'
-import Register from './Register'
+import Navbar from '../components/Navbar.js'
+import Announcement from '../components/Announcement.js'
+import Slider from '../components/Slider.js'
+import Categories from '../components/Categories.js'
+import Products from '../components/Products.js'
+import Newsletter from '../components/Newsletter.js'
+import Footer from '../components/Footer.js'
+import Register from './Register.js'
 const Home = () => {
     return (
    <div>

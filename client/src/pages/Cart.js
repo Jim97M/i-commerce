@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import Announcement from '../Navbar/Announcement'
-import Footer from '../Navbar/Footer'
-import Navbar from '../Navbar/Navbar'
+import Announcement from '../components/Announcement.js'
+import Footer from '../components/Footer.js'
+import Navbar from '../components/Navbar.js'
 import { Add, Remove } from '@material-ui/icons'
 
 const Container = styled.div`
