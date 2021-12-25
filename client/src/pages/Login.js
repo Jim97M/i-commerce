@@ -60,14 +60,21 @@ const Link = styled.a`
 
 
 const Login = () => {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleClick = () => {
+        e.preventDefault();
+    }
+
     return (
         <Container>
         <Wrapper>
         <Title>CREATE AN ACCOUNT</Title>
              <Form>
-                 <Input name="" placeholder="Email"/>
-                 <Input name="" placeholder="Password"/>
-                 <Button>Sign In</Button>
+                 <Input name="" placeholder="Email" onChange={(e) => setUsername(e.target.value)}/>
+                 <Input name="" placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
+                 <Button onClick={handleClick}>Sign In</Button>
             </Form>
           
              <Link>Don't Remember Password?</Link>
