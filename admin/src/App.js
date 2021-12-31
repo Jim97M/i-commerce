@@ -8,6 +8,7 @@ import NewUser from "./pages/newUser/NewUser";
 import ProductList from "./pages/productList/ProductList";
 import Product from "./pages/product/Product";
 import NewProduct from "./pages/newProduct/NewProduct";
+import {useSelector} from "react-redux";
 import {
     BrowserRouter,
     Routes,
@@ -16,7 +17,8 @@ import {
 } from "react-router-dom";
 
 function App(){
-    return (
+  const user = useSelector(state => state.user.currentUser);
+      return (
         <BrowserRouter>
           <Topbar />
           <div className="container">
