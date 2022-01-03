@@ -7,7 +7,7 @@ const authRoute = require("./routes/auth");
 const userRoute = require("./routes/user");
 const productRoute = require("./routes/product");
 const cartRoute = require("./routes/cart");
-const orderRoute = require("./routes/product");
+const orderRoute = require("./routes/order");
 
 dotenv.config();
 
@@ -22,7 +22,7 @@ app.use(cors());
 app.use(express.json());
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/auth", authRoute);
-app.use("/api/v1/products", require("cors")(), productRoute);
+app.use("/api/v1/products", productRoute);
 app.use("/api/v1/cart", cartRoute);
 app.use("/api/v1/order", orderRoute);
 app.listen(process.env.PORT || 5000, () => {

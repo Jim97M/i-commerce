@@ -17,7 +17,7 @@ import {
 } from "react-router-dom";
 
 function App(){
-  const user = useSelector(state => state.user.currentUser);
+
       return (
         <BrowserRouter>
           <Topbar />
@@ -29,7 +29,7 @@ function App(){
                <Route path=":id" element={<User />} />
                <Route path="/newuser" element={<NewUser />} />
                <Route path="products" element={<ProductList />} />
-               <Route path=":productId" element={<Product />} />
+               <Route path="/product/:productId" element={<Product />} />
                <Route path="/newproduct" element={<NewProduct />} />
 
              </Routes>

@@ -5,10 +5,10 @@ const TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTEyMGM2OWMzZWRh
 
 export const publicRequest = axios.create({
     baseURL: BASE_URL,
-    headers: {token: `Bearer ${TOKEN}`},
 })
 
 export const userRequest = axios.create({
     baseURL: BASE_URL,
     headers: {token: `Bearer ${TOKEN}`},
 })
+

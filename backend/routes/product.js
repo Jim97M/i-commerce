@@ -1,6 +1,11 @@
 const router = require("express").Router();
 const Product = require("../models/Product");
-const { verifyTokenAndAdmin, verifyToken } = require("./verifyToken");
+const {
+  verifyToken,
+  verifyTokenAndAuthorization,
+  verifyTokenAndAdmin,
+} = require("./verifyToken");
+
 
 //CREATE NEW PRODUCT
 router.post("/", verifyTokenAndAdmin, async (req, res) => {
@@ -30,10 +35,10 @@ router.put("/:id", verifyTokenAndAdmin, async (req, res) => {
   }
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", verifyTokenAndAdmin, async (req, res) => {
   try {
     await Product.findByIdAndDelete(req.params.id);
-    res.status(200).json("User Deleted Successfully");
+    res.status(200).json("Product Deleted Successfully");
   } catch (err) {
     res.status(500).json(err);
   }
@@ -48,7 +53,7 @@ router.get("/find/:id", async (req, res) => {
   }
 });
 
-router.get("/", async (req, res) => {
+router.get("/", async(req, res) => {
   const qNew = req.query.new;
   const qCategory = req.query.category;
 
