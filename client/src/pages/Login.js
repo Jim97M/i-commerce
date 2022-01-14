@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import styled from 'styled-components';
 import { login } from '../redux/apiCalls';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector} from 'react-redux';
 const Container = styled.div`
    width: 100vw;
@@ -60,12 +61,12 @@ const Error = styled.div`
 `;
 
 
-const Link = styled.a`
-    margin: 5px 0px;
-    font-size: 12px;
-    text-decoration: underline;
-    cursor: pointer;
-`;
+// const Link = styled.a`
+//     margin: 5px 0px;
+//     font-size: 12px;
+//     text-decoration: underline;
+//     cursor: pointer;
+// `;
 
 
 const Login = () => {
@@ -88,8 +89,7 @@ const Login = () => {
                  <Button onClick={handleClick} disabled={isFetching}>Sign In</Button>
                  {error && <Error>Something Went Wrong</Error> }
             </Form>
-             <Link>Don't Remember Password?</Link>
-             <Link>Create New Account</Link>
+             <Link to="/register">Create New Account</Link>
         </Wrapper>
     </Container>
 )

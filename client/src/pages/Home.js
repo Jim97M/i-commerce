@@ -7,12 +7,15 @@ import Products from '../components/Products.js'
 import Newsletter from '../components/Newsletter.js'
 import Footer from '../components/Footer.js'
 import Register from './Register.js'
+import Seller from '../components/Sellers/Sellers.js'
 const Home = () => {
     return (
    <div>
-         <Announcement />
+         {/* <Announcement /> */}
+         
         <Navbar />
-        <Slider />
+        {/* <Slider /> */}
+        <Seller />
         <Categories />
         <Products />
         <Newsletter />
