@@ -20,10 +20,23 @@ module.exports = {
         },
       },
       {
-        test: /\.scss$/,
-        use: ["style-loader", "sass-loader", "css-loader"],
+        test: /\.(scss|css)$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: 'svg-url-loader',
+            options: {
+              limit: 10000,
+            },
+          },
+        ],
       },
     ],
   },
   plugins: [new miniCssExtraPlugin()],
 };
+
+
