@@ -17,17 +17,31 @@ const ProfileSChema = new mongoose.Schema({
        type: String,
        required: true,
    },
-   county:{
-       type: String,
-       required: true,
-   },
    image: {
+       type: Buffer,
+       required: true
+   },
+   email:{
        type: String,
        required: true
    },
+   password: {
+       type: String
+   },
+   isVerified: {
+       type: Boolean,
+       default: false,
+   },
+   googleId: {
+       type: String,
+   },
+   provider: {
+       type: String,
+       required: true,
+   }
 
 }
  {timestamps: true}
-)
+);
 
 module.exports = mongoose.model("Profile", ProfileSchema);
