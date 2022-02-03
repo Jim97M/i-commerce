@@ -31,3 +31,6 @@ module.exports.sendVerifyEmail = async (email, token) => {
         html: `<h3> Click on this link to verify your email: ${url} </h3>`,
     });
 };
+
+module.exports = router;
+
