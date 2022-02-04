@@ -15,7 +15,6 @@ function checkAuth(req, res, next){
         req.flash('error_messages', 'Please Login to Continue!');
         res.redirect('/login');}
     }
-}
 
 router.get('/login', (req, res) => {
     res.render("login", {csrfToken: req.csrfToken});
@@ -29,7 +28,7 @@ router.post('/signup', (req, res) => {
     //Get all user input
     const {email, username, password, confirmpassword} = req.body;
     if(!email || !username || !password ||confirmpassword){
-        res.render("signup" {err: "Fill all Fields", csrfToken: req.csrfToken()});
+        res.render("signup", {err: "Fill all Fields", csrfToken: req.csrfToken() });
     }else if(password != confirmpassword){
         res.render("signup",{err: "Passwords Don't Match!", csrfToken: req.csrfToken()});
     }else{
@@ -48,7 +47,7 @@ router.post('/signup', (req, res) => {
                         password: hash,
                         googleId: null,
                         provider: 'email',
-                    }).save({err, data} => {
+                    }).save((err, data) => {
                         //If err redirect
                         if (err) throw err;
                         res.redirect('/login');

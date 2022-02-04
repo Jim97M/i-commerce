@@ -34,6 +34,7 @@ module.exports = function(passport){
         });
     }
     ));
+    
     passport.serializerUser(function (done, profile) {
         done(null, profile.id);
     });

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const ProfileSChema = new mongoose.Schema({
+const ProfileSchema = new mongoose.Schema({
    username:{
        type: String,
        required: true,
@@ -40,7 +40,7 @@ const ProfileSChema = new mongoose.Schema({
        required: true,
    }
 
-}
+},
  {timestamps: true}
 );
 
