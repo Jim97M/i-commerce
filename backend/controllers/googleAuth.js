@@ -35,13 +35,13 @@ module.exports = function(passport){
     }
     ));
     
-    passport.serializerUser(function (done, profile) {
-        done(null, profile.id);
-    });
+    // passport.serializerUser(function (done, profile) {
+    //     done(null, profile.id);
+    // });
 
-    passport.deserializeUser(function(id, done){
-        profile.findById(id, function(err, user){
-          done(err, user);
-        });
-    });
+    // passport.deserializeUser(function(id, done){
+    //     profile.findById(id, function(err, user){
+    //       done(err, user);
+    //     });
+    // });
 }

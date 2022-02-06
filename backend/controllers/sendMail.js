@@ -32,5 +32,5 @@ module.exports.sendVerifyEmail = async (email, token) => {
     });
 };
 
-module.exports = router;
+
 

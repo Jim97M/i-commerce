@@ -87,6 +87,5 @@ router.get('/profile', checkAuth, (req, res) => {
 });
 
 router.use(userRoutes);
+
 module.exports = router;
-
-

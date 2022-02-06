@@ -118,8 +118,10 @@ router.post('user/reset-password', async(req, res) => {
           await profile.findOneAndUpdate({email: email}, {$set:{password: hash} });
           res.redirect('/login');
         }else{
-            res.render({'forgotPassword.js', {csrfToken: req.csrfToken(), reset: true, err: "Unexpected Error Try Again", email: email}});
+            res.render('forgotPassword.js', {csrfToken: req.csrfToken(), reset: true, err: "Unexpected Error Try Again", email: email});
         }
 
     }
 })
+
+module.exports = router;

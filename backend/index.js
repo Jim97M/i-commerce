@@ -35,11 +35,10 @@ app.use(expressSession({
   maxAge: 24 * 60 * 60 * 1000,
   store: new MemoryStore(),
 }));
-
-app.use(cors());
-app.use(express.json());
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(cors());
+app.use(express.json());
 app.use(flash());
 app.use(function(req, res, next){
   res.locals.success_messages = req.flash('success_messages');

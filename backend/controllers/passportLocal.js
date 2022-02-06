@@ -1,5 +1,6 @@
 const profile = require('../models/Profile');
 const bcryptjs = require('bcryptjs');
+const passport = require('passport');
 var localStrategy = require('passport-local').Strategy;
 
 module.exports = function(passport){
@@ -24,14 +25,12 @@ module.exports = function(passport){
     }));
 
 
-    passport.serializeUser(function (profile, done){
-        done(null, user.id);
-    });
+    // passport.serializeUser(profile.serializeUser());
 
-    passport.deserializeUser(function(id, done){
-        profile.findById(id, function(err, user){
-            done(err, user);
-        });
-    });
+    // passport.deserializeUser(function(id, done){
+    //     profile.findById(id, function(err, user){
+    //         done(err, user);
+    //     });
+    // });
 
 }
