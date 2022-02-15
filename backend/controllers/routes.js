@@ -28,14 +28,14 @@ router.post('/signup', (req, res) => {
     //Get all user input
     const {email, username, password, confirmpassword} = req.body;
     if(!email || !username || !password ||confirmpassword){
-        res.render("signup", {err: "Fill all Fields", csrfToken: req.csrfToken() });
+        res.render("signup", {err: "Fill all Fields" });
     }else if(password != confirmpassword){
-        res.render("signup",{err: "Passwords Don't Match!", csrfToken: req.csrfToken()});
+        res.render("signup",{err: "Passwords Don't Match!"});
     }else{
         profile.findOne({$or: [{email: email}, {username: username}]}, function(err, data){
             if(err) throw err;
             if(data){
-                res.render("signup",{err: "User already exists!", csrfToken: req.csrfToken()});
+                res.render("signup",{err: "User already exists!"});
             }else{
                 bcryptjs.getSalt(12, (err, salt) => {
                     if(err) throw err;

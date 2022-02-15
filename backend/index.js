@@ -37,6 +37,7 @@ app.use(expressSession({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(csrf());
 app.use(cors());
 app.use(express.json());
 app.use(flash());
