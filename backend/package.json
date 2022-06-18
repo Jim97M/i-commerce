@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "E-Commerce Backend",
   "main": "index.js",
+  "type": "commonjs",
   "scripts": {
     "start": "nodemon index.js"
   },
   "author": "James Masika Wabuya",
   "license": "ISC",
   "dependencies": {
+    "-": "^0.0.1",
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.6",
@@ -16,16 +18,19 @@
     "crypto-js": "^4.1.1",
     "csurf": "^1.11.0",
     "dotenv": "^10.0.0",
-    "express": "^4.17.1",
+    "express": "^4.18.1",
     "express-session": "^1.17.2",
     "jsonwebtoken": "^8.5.1",
     "memorystore": "^1.6.6",
     "mongoose": "^6.0.13",
+    "mysql2": "^2.3.3",
     "nodemailer": "^6.7.2",
     "nodemon": "^2.0.15",
     "passport": "^0.5.2",
     "passport-google-oauth20": "^2.0.0",
     "passport-local": "^1.0.0",
-    "passport-strategy": "^1.0.0"
+    "passport-strategy": "^1.0.0",
+    "save": "^2.5.0",
+    "sequelize": "^6.21.0"
   }
 }
